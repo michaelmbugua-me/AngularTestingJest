@@ -1,8 +1,8 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {CounterService} from './CounterService';
 
 @Component({
-  selector: 'app-counter',
-  template: `
+  selector: 'app-counter', template: `
     <div>
       <button id="decrementButton" (click)="decrement()">-</button>
       <span>{{ count }}</span>
@@ -10,9 +10,19 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
     </div>
   `
 })
-export class CounterComponent {
+export class CounterComponent implements OnInit {
+
   @Input() count: number = 0;
   @Output() countChange = new EventEmitter<number>();
+
+  constructor(private counterService: CounterService) {
+  }
+
+  ngOnInit(): void {
+    this.counterService
+      .getInitialCount()
+      .subscribe(count => this.count = count);
+  }
 
   increment() {
     this.count++;

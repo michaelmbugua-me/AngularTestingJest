@@ -7,7 +7,7 @@ import {BehaviorSubject, delay, Observable, of} from 'rxjs';
 export class CounterService {
 
   getInitialCount(): Observable<number> {
-    return of(10).pipe(delay(1000));
+    return of(15).pipe(delay(1000));
   }
 
 }
