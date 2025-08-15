@@ -19,7 +19,7 @@ jobs:
       - name: npm install, npm run coveralls
         run: |
           npm install
-          npm run coveralls
+          COVERALLS_REPO_TOKEN=EB5ZaSkUPWBJeDKWH5op7Ui2LWBXKMh5a npm run coveralls
 
       - name: Coveralls
         uses: coverallsapp/github-action@v2
