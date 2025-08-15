@@ -54,4 +54,30 @@ describe('CounterComponent', () => {
     expect(countSpan?.textContent).toBe('0');
   });
 
+  it('should emit the new count when the count changes after clicking the increment button', () => {
+    component.count = 1;
+
+    const countChange =
+      jest.spyOn(component.countChange, 'emit');
+    const incrementButton = compiled.querySelector('#incrementButton') as HTMLButtonElement;
+    incrementButton.click();
+    fixture.detectChanges();
+
+    expect(countChange).toHaveBeenCalledWith(2);
+  });
+
+  it('should emit the new count when the count changes after clicking the decrement button', () => {
+    component.count = 1;
+
+    const countChange =
+      jest.spyOn(component.countChange, 'emit');
+
+    const decrementButton = compiled.querySelector('#decrementButton') as HTMLButtonElement;
+    decrementButton.click();
+    fixture.detectChanges();
+
+    expect(countChange).toHaveBeenCalledWith(0);
+
+  })
+
 });
