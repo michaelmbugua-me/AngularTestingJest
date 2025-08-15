@@ -1,5 +1,5 @@
 .landing-page-image {
-  background-image: url('../../public/Landing-pattern.svg');
+  background-image: url('/Landing-pattern.svg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

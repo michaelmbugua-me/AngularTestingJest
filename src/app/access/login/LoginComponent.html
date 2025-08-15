@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 p-3 text-dark  landing-page-image">
+      <div class="row">
+        <div class="col-4 mt-4 mb-4 ms-5">
+          <img ngSrc="/Inverse.svg" alt="equity_logo" width="120" height="90">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5 mt-3 ms-5">
+          <span class="text-white welcome-font">Welcome to Equity Online</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6 mt-3 ms-5">
+          <span class="text-white welcome-subtext-font">More than just banking</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 text-dark">
+
+      <div class="card text-left mx-0 px-0 border-0">
+
+        <div class="card-body">
+
+          <div class="row">
+            <div class="col-12 px-0">
+              <h5 class="card-title right-slider-title-text">Sign In</h5>
+              <p class="card-text right-slider-text">
+                Sign in to continue. Remember, your password is yours, do not share it with anyone
+              </p>
+              <p class="card-text right-slider-text">
+                If this is your first time here you can register.
+              </p>
+
+              <mat-form-field class="full-width-input">
+                <mat-label>Country</mat-label>
+                <input type="text" matInput placeholder="Kenya" value="Kenya">
+              </mat-form-field>
+
+              <mat-form-field class="full-width-input">
+                <mat-label>Email address or mobile number</mat-label>
+                <input type="text" matInput placeholder="Email address or mobile number">
+              </mat-form-field>
+
+              <mat-form-field class="full-width-input">
+                <mat-label>Enter Password</mat-label>
+                <input type="text" matInput placeholder="Enter Password">
+              </mat-form-field>
+              <button mat-flat-button (click)="goToLogin()">Sign In</button>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
