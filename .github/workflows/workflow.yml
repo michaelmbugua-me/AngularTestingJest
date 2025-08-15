@@ -1,14 +1,12 @@
 on: ["push", "pull_request"]
 
-name: Test Coveralls
+name: Test and Coverage
 
 jobs:
-
-  build:
-    name: Build
+  coverage:
+    name: Test and Upload Coverage
     runs-on: ubuntu-latest
     steps:
-
       - uses: actions/checkout@v4
 
       - name: Install Node.js
@@ -16,12 +14,14 @@ jobs:
         with:
           node-version: lts/*
 
-      - name: npm install, npm run coveralls
-        run: |
-          npm install
-          COVERALLS_REPO_TOKEN=EB5ZaSkUPWBJeDKWH5op7Ui2LWBXKMh5a npm run coveralls
-        with:
-          path-to-lcov: ./coverage/lcov.info
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Coveralls
+      - name: Run tests with coverage
+        run: npm test -- --coverage
+
+      - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path-to-lcov: ./coverage/lcov.info
