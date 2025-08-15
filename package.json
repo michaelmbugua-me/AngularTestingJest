@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "test-with-coverage": "jest --coverage",
-    "coverage": "jest --coverage && coveralls < coverage/lcov.info",
+    "coverage": "jest --coverage && coveralls < coverage/lcov.info"
   },
   "prettier": {
     "printWidth": 100,
