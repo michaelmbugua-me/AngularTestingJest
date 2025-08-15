@@ -20,6 +20,8 @@ jobs:
         run: |
           npm install
           COVERALLS_REPO_TOKEN=EB5ZaSkUPWBJeDKWH5op7Ui2LWBXKMh5a npm run coveralls
+        with:
+          path-to-lcov: ./coverage/lcov.info
 
       - name: Coveralls
         uses: coverallsapp/github-action@v2
