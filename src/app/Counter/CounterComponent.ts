@@ -4,9 +4,9 @@ import {Component, Input, Output, EventEmitter} from '@angular/core';
   selector: 'app-counter',
   template: `
     <div>
-      <button (click)="decrement()">-</button>
+      <button id="decrementButton" (click)="decrement()">-</button>
       <span>{{ count }}</span>
-      <button (click)="increment()">+</button>
+      <button id="incrementButton" (click)="increment()">+</button>
     </div>
   `
 })
