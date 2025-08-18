@@ -24,7 +24,7 @@ export class LoginComponent {
   constructor(private router: Router) {
   }
 
-  goToLogin() {
-    this.router.navigateByUrl('/login').then();
+  goToPostsList() {
+    this.router.navigateByUrl('/post-list').then();
   }
 }
